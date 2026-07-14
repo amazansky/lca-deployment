@@ -1692,8 +1692,8 @@ packages:
     resolution: {integrity: sha512-uxc/zpqFg6x7C8vOE7lh6Lbda8eEL9zmVm/PLeTPBRhh1xCgdWaQ+J1CUieGpIfm2HdtsUpRv+HshiasBMcc6A==}
     engines: {node: '>=6'}
 
-  tar@7.5.13:
-    resolution: {integrity: sha512-tOG/7GyXpFevhXVh8jOPJrmtRpOTsYqUIkVdVooZYJS/z8WhfQUX8RJILmeuJNinGAMSu1veBr4asSHFt5/hng==}
+  tar@7.5.16:
+    resolution: {integrity: sha512-56adEpPMouktRlBLXiaYFFzZ/3+JXa8P9n7WbR+ibIjtviN55mEaOkiysCnPnWm+7kkui1Dn8J9l+g6zV8731w==}
     engines: {node: '>=18'}
 
   text-hex@1.0.0:
@@ -2162,7 +2162,7 @@ snapshots:
       open: 10.2.0
       package-manager-detector: 1.6.0
       stacktrace-parser: 0.1.11
-      tar: 7.5.13
+      tar: 7.5.16
       winston: 3.19.0
       winston-console-format: 1.0.8
       yaml: 2.8.4
@@ -3425,7 +3425,7 @@ snapshots:
 
   tapable@2.3.3: {}
 
-  tar@7.5.13:
+  tar@7.5.16:
     dependencies:
       '@isaacs/fs-minipass': 4.0.1
       chownr: 3.0.0
