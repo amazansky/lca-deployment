@@ -28,8 +28,15 @@
   "devDependencies": {
     "@langchain/langgraph-cli": "^1.0.0",
     "@types/node": "^20.0.0",
-    "tsx": "^4.0.0",
+    "tsx": "^4.23.1",
     "typescript": "^5.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@langchain/langgraph>uuid": "11.1.1",
+      "@langchain/langgraph-api>uuid": "11.1.1",
+      "@langchain/langgraph-checkpoint>uuid": "11.1.1"
+    }
   },
   "engines": {
     "node": ">=20.0.0"
