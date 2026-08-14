@@ -13,6 +13,7 @@ Assistant context (set per assistant in LangSmith):
 """
 
 import asyncio
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -26,7 +27,18 @@ from langchain_mcp_adapters.client import MultiServerMCPClient
 # ---------------------------------------------------------------------------
 # Model
 # ---------------------------------------------------------------------------
-model = init_chat_model("anthropic:claude-sonnet-4-6")
+# Routed through the LLM Gateway's custom-provider "alex-gpt-gateway" config,
+# which pins every call to its configured upstream model regardless of the
+# model name passed here (https://gateway.smith.langchain.com/models/{configName}).
+model = init_chat_model(
+    model="gpt-4.1",
+    model_provider="openai",
+    base_url="https://gateway.smith.langchain.com/models/alex-gpt-gateway",
+    # this should be LANGSMITH_API_KEY (since we're calling the model through gateway)
+    # but LANGSMITH_API_KEY is a reserved name and will be stripped by the CLI on deploy.
+    # we use this instead - see .env.example
+    api_key=os.environ["DEEP_TUTOR_API_KEY"],
+)
 # model = init_chat_model("openai:gpt-4o")
 # model = init_chat_model("google_genai:gemini-2.5-flash")
 
